@@ -3,13 +3,20 @@ import 'package:bookly/Features/home/domain/repo/home_repo.dart';
 import 'package:dartz/dartz.dart';
 
 import '../../../../core/errors/failure.dart';
+import '../../../../core/use_cases/use_case.dart';
 
-class FetchFeaturedBooksUseCase {
+class FetchFeaturedBooksUseCase
+    extends UseCase<List<BookEntity>, NoParameters> {
   final HomeRepo homeRepo;
 
   FetchFeaturedBooksUseCase(this.homeRepo);
-  Future<Either<Failure, List<BookEntity>>> fetchFeaturedBooks() {
+  @override
+  Future<Either<Failure, List<BookEntity>>> call(
+      [NoParameters? parameters]) async {
     //check permission
-    return homeRepo.fetchFeaturedBooks();
+    return await homeRepo.fetchFeaturedBooks();
   }
 }
+
+// type <T>
+
