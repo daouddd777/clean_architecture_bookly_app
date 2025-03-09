@@ -17,6 +17,3 @@ class FetchFeaturedBooksUseCase
     return await homeRepo.fetchFeaturedBooks();
   }
 }
-
-// type <T>
-
