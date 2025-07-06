@@ -1,4 +1,4 @@
-package com.example.clean_arch_bookly_app
+package com.daoud.bokyapp
 
 import io.flutter.embedding.android.FlutterActivity
 
